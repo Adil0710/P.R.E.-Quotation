@@ -306,7 +306,10 @@ const PreQuotationForm = () => {
       <div className="container py-5 mt-[10%] w-50 bg-blue-100 text-dark rounded-md">
         <div className="row justify-content-center">
           <div className="col-lg-9">
-            <h1 className="mb-5  text-4xl font-bold">Login</h1>
+            <div className=" mb-3 header flex justify-between items-center">
+            <h1 className="  text-4xl font-bold">Login</h1>
+            <img src={logo} alt="" srcset="" width={100}/>
+            </div>
             <form onSubmit={handleLogin}>
               <div className="mb-4">
                 <label htmlFor="username" className="form-label font-medium">Username</label>
