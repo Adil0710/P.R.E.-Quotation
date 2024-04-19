@@ -1,40 +1,64 @@
-  import React from 'react';
-  import html2pdf from 'html2pdf.js';
-  import ReactDOMServer from 'react-dom/server';
-  import logo from '../src/assets/logo.png'
-  import './index.css';
-  import sign from '../src/assets/sign.jpg'
-  import { MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
+import React, { useState } from 'react';
+import html2pdf from 'html2pdf.js';
+import ReactDOMServer from 'react-dom/server';
+import logo from '../src/assets/logo.png';
+import './index.css';
+import sign from '../src/assets/sign.jpg';
+import { MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
 
-  const PreQuotationForm = () => {
-    const handleSubmit = (e) => {
-      e.preventDefault();
-    
-      const formData = new FormData(e.target);
-      const rawDate = formData.get('date');
-      const dateObj = new Date(rawDate);
-      
-      // Format date to dd-mm-yyyy
-      const formattedDate = `${dateObj.getDate().toString().padStart(2, '0')}-${(dateObj.getMonth() + 1).toString().padStart(2, '0')}-${dateObj.getFullYear()}`;
-    
-      const to = formData.get('to');
+const PreQuotationForm = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-      const ngprice = formData.get('ngprice');
-      const ngremark = formData.get('ngremark');
-      const nsprice = formData.get('nsprice');
-      const nsremark = formData.get('nsremark');
+  const [formData, setFormData] = useState({
+    date: '',
+    to: '',
+    // ... other form fields
+  });
 
-      const cgprice = formData.get('cgprice');
-      const cgremark = formData.get('cgremark');
-      const csprice = formData.get('csprice');
-      const csremark = formData.get('csremark');
+  React.useEffect(() => {
+    const storedLoginState = localStorage.getItem('isLoggedIn');
+    if (storedLoginState) {
+      setIsLoggedIn(JSON.parse(storedLoginState));
+    }
+  }, []);
 
-      const wgprice = formData.get('wgprice');
-      const wgremark = formData.get('wgremark');
-      const wsprice = formData.get('wsprice');
-      const wsremark = formData.get('wsremark');
-      const whprice = formData.get('whprice');
-      const whremark = formData.get('whremark');
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // Simulating authentication without a backend
+    if (username === 'admin' && password === 'pre04') {
+      setIsLoggedIn(true);
+      localStorage.setItem('isLoggedIn', JSON.stringify(true)); // Store login state in local storage
+    } else {
+      alert('Invalid username or password');
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const rawDate = formData.get('date');
+    const dateObj = new Date(rawDate);
+    const formattedDate = `${dateObj.getDate().toString().padStart(2, '0')}-${(dateObj.getMonth() + 1).toString().padStart(2, '0')}-${dateObj.getFullYear()}`;
+    const to = formData.get('to');
+    const ngprice = formData.get('ngprice');
+    const ngremark = formData.get('ngremark');
+    const nsprice = formData.get('nsprice');
+    const nsremark = formData.get('nsremark');
+    const cgprice = formData.get('cgprice');
+    const cgremark = formData.get('cgremark');
+    const csprice = formData.get('csprice');
+    const csremark = formData.get('csremark');
+    const wgprice = formData.get('wgprice');
+    const wgremark = formData.get('wgremark');
+    const wsprice = formData.get('wsprice');
+    const wsremark = formData.get('wsremark');
+    const whprice = formData.get('whprice');
+    const whremark = formData.get('whremark');
+
       
 
       // Generate JSX for PDF
@@ -54,8 +78,8 @@
     <h1 className=' text-center font-semibold mt-1 mb-2 text-sm text-blue-600'>Mob. 9371288405 &nbsp;| &nbsp; E-Mail: Prepune04@gmail.com &nbsp; | &nbsp; Website: wwww.vikrantpresecurity.com</h1>
   </div>
   <div className="date flex justify-between items-center mt-4">
-          <h1>Ref. No.: AS&AS/Q/2022</h1>
-          <h1>Date: {formattedDate}</h1>
+          <h1 className=' font-medium'>Ref. No.: AS&AS/Q/2022</h1>
+          <h1 className=' font-medium'>Date: {formattedDate}</h1>
         </div>
         <div className="to mt-20 mx-10">
           <h1>To</h1>
@@ -243,21 +267,8 @@
 
           </div>
 
-          {/* Page 4 */}
-          <div className="page">
-          <div className="header bg-slate-100 px-5 flex justify-between items-center rounded-md">
-          <img src={logo} alt="" width={125} />
-          <div className="title flex justify-center items-center flex-col">
-          <h1 className=' text-[30px] font-bold text-[#D9484A]'>P.R. Enterprise </h1>
-        <h1 className=' text-xl '> Security & Bouncer Services</h1>
-          </div>
-        </div>
-        <div className="border-t border-b border-[#ccc] mt-3 py-1">
-    <h1 className=' text-center text-sm'>Shop No. 4/4, &nbsp; Shantinagar Society, &nbsp; Near kirloskar bridge, &nbsp; Pune-Solapur Road, &nbsp; Hadapsar, &nbsp; Pune-411013.</h1>
-    <h1 className=' text-center font-semibold mt-1 mb-2 text-sm'>Mob. 9371288405 &nbsp;| &nbsp; E-Mail: Prepune04@gmail.com &nbsp; | &nbsp; Website: wwww.vikrantpresecurity.com</h1>
-  </div>
-            {/* Add content for page 4 here */}
-          </div>
+          
+          
         </>
       );
 
@@ -268,31 +279,62 @@
       const pdf = html2pdf().from(htmlString).save(to +'_'+formattedDate +'.pdf');
 
       // Open new window for sharing options
-      const newWindow = window.open('', '_blank');
+      // const newWindow = window.open('', '_blank');
 
       // Display buttons for sharing PDF via email and WhatsApp
-      newWindow.document.write(`
-        <html>
-          <head>
-            <title>Share PDF</title>
-          </head>
-          <body>
-            <h1>Share PDF</h1>
-            <button onclick="window.open('mailto:?subject=Quotation&body=Please find the quotation attached.&attachment=quotation.pdf')">Share via Email</button>
-            <button onclick="window.open('https://wa.me/?text=Please find the quotation attached.%0A')">Share via WhatsApp</button>
-          </body>
-        </html>
-      `);
-      newWindow.document.close();
+      // newWindow.document.write(`
+      //   <html>
+      //     <head>
+      //       <title>Share PDF</title>
+      //     </head>
+      //     <body>
+      //       <h1>Share PDF</h1>
+      //       <button onclick="window.open('mailto:?subject=Quotation&body=Please find the quotation attached.&attachment=quotation.pdf')">Share via Email</button>
+      //       <button onclick="window.open('https://wa.me/?text=Please find the quotation attached.%0A')">Share via WhatsApp</button>
+      //     </body>
+      //   </html>
+      // `);
+      // newWindow.document.close();
     };
+    const handleLogout = () => {
+      setIsLoggedIn(false);
+      localStorage.removeItem('isLoggedIn'); // Remove login state from local storage
+    };
+
+     if (!isLoggedIn) {
+    return (
+      <div className="container py-5 mt-[10%] w-50 bg-blue-100 text-dark rounded-md">
+        <div className="row justify-content-center">
+          <div className="col-lg-9">
+            <h1 className="mb-5  text-4xl font-bold">Login</h1>
+            <form onSubmit={handleLogin}>
+              <div className="mb-4">
+                <label htmlFor="username" className="form-label font-medium">Username</label>
+                <input type="text" className="form-control bg-transparent border-[#999999]" id="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="password" className="form-label font-medium">Password</label>
+                <input type="password" className="form-control bg-transparent border-[#999999]" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+              </div>
+              <button type="submit" className="btn btn-primary w-40 mt-3">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
     return (
       <div className="container pb-4 pt-2">
         <div className="row justify-content-center">
           <div className="col-lg-9">
             <div className="header flex  justify-between items-center bg-slate-200 px-4 rounded-md">
-            <h1 className="mb-3 my- text-4xl font-bold">P.R.E. Quotation</h1>
+            
             <img src={logo} alt="" width={100}/>
+            <h1 className="mb-3 my- text-4xl font-bold">P.R.E. Quotation</h1>
+                  <button type="button" className="btn btn-danger btn-sm w-20 fw-bold" onClick={handleLogout}>Logout</button>
+                
+            
             </div>
             <form className="mt-5" onSubmit={handleSubmit}>
               <div className="row g-3">
@@ -378,6 +420,9 @@
                     <div className="col-md-3">
                       <button type="submit" className="btn btn-dark w-100 fw-bold">Generate PDF</button>
                     </div>
+                    {/* <div className="col-md-3">
+                  <button type="button" className="btn btn-danger w-100 fw-bold" onClick={handleLogout}>Logout</button>
+                </div> */}
                   </div>
                 </div>
               </div>
