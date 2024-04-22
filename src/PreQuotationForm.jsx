@@ -5,11 +5,79 @@ import logo from '../src/assets/logo.png';
 import './index.css';
 import sign from '../src/assets/sign.jpg';
 import { MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
+import img from '../src/assets/img.jpg'
 
 const PreQuotationForm = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const [duties, setDuties] = useState([
+    { id: 1, name: 'Pranam enterprises ( kondava chauk).' },
+    { id: 2, name: 'Kumar Pebble Park.' },
+    { id: 3, name: 'Gemini Housing.' },
+    { id: 4, name: 'Kalpana Classic.' },
+    { id: 5, name: 'Kubera Garden. ' },
+    { id: 6, name: 'Kumar Parijat. ' },
+    { id: 7, name: 'Vijajay Garden Co-Op Hsg .Ltd. ' },
+    { id: 8, name: 'Archna Hill Town. ' },
+    { id: 9, name: 'Hi Tech Metal Forming. ' },
+    { id: 10, name: 'Kumar Pushpak. ' },
+    { id: 11, name: 'Kumar Business Court. ' },
+    { id: 12, name: 'Kumar Pride.' },
+    { id: 13, name: 'Kumar Sankhya. ' },
+    { id: 14, name: 'Kumar Plot Baner. ' },
+    { id: 15, name: 'Kumar Plot Sr No 55. ' },
+    { id: 16, name: 'Atharva Tower. ' },
+    { id: 17, name: 'Bafana Bungalow. ' },    
+  ]);
+  const [duties1, setDuties1] = useState([
+    { id: 18, name: 'Premchand Furnishing. ' },
+    { id: 19, name: 'Kumar  Renaissance. ' },
+    { id: 20, name: 'Pride Platinum. ' },
+    { id: 21, name: 'Wellworth Paradise.' },
+    { id: 22, name: 'Om Associates' },
+    { id: 23, name: 'Kumar And Potnis Mohan Nagar.' },
+    { id: 24, name: 'Kumar Pinakin. ' },
+    { id: 25, name: 'Nirmrti Vishal Enterprprises. ' },
+    { id: 26, name: 'N.C.Properties.' },
+    { id: 27, name: 'Faith Society. ' },
+    { id: 28, name: 'Poonawala Bungalow.' },
+    { id: 29, name: `Shroff Group (S.B.C.,Slgnatre Height, 
+      Suyesh) ` },
+    { id: 30, name: 'Kumar Princeville. ' },
+    { id: 31, name: 'Kumar Piccadilly. ' },
+    { id: 32, name: 'Techno  Life Style Dew Pvt.Ltd. ' },
+    { id: 33, name: 'Raisoni Group Of Institute. ' },
+    { id: 34, name: 'T.K.Ispat Pvt.Ltd. ' },    
+  ]);
+  const [duties2, setDuties2] = useState([
+    { id: 35, name: 'K. Pacific Mall.' },
+    { id: 36, name: 'Eisha Palace. ' },
+    { id: 37, name: 'Galana Plot.' },
+    { id: 38, name: 'Park Infinia. ' },
+    { id: 39, name: 'Suyog Pearl. ' },
+    { id: 40, name: 'Regency Group Pune.' },
+    { id: 41, name: 'Vedant Group.  ' },
+    { id: 42, name: 'Pride Gateway. ' },
+    { id: 43, name: 'Bora Realty Group.' },
+    { id: 44, name: 'Manav Group. ' },
+    { id: 45, name: 'Darode Jog Builders. ' },
+    { id: 46, name: "Dynamic Realty creation."  },
+    { id: 47, name: 'Dynamic Vadant Associates. ' },
+    { id: 48, name: 'Jhala Developers Pvt.Ltd. (Simplicity) ' },
+    { id: 49, name: 'Ganga Village Co-Op. Hsg .Society. ' },
+    { id: 50, name: 'Jhala Associates Green Wood . ' },
+    { id: 51, name: 'Arvade Constructure (Mamurdi Gaon).' },    
+  ]);
+  const [duties3, setDuties3] = useState([
+    { id: 52, name: 'Sunshine Co.Hsg.Society.' },
+    { id: 53, name: 'Sunrise Co.Hsg.Society.' },
+    { id: 54, name: 'Viraj Infrastructure (Mamurdi Gaon).' },
+    { id: 55, name: 'KAKA HALWAI.' },
+    { id: 56, name: 'PRANAM  ENTEERPRISES.' },
+  ]);
+
 
   const [formData, setFormData] = useState({
     date: '',
@@ -267,7 +335,355 @@ const PreQuotationForm = () => {
 
           </div>
 
-          
+          {/* Page 4 */}
+          <div className="page">
+          <div className="header bg-slate-100 px-5 flex justify-between items-center rounded-md">
+          <img src={logo} alt="" width={125} />
+          <div className="title flex justify-center items-center flex-col">
+          <h1 className=' text-[30px] font-bold text-[#D9484A]'>P.R. Enterprise </h1>
+        <h1 className=' text-xl '> Security & Bouncer Services</h1>
+          </div>
+        </div>
+        <div className="border-t border-b border-[#ccc] mt-3 py-1">
+    <h1 className=' text-center text-sm'>Shop No. 4/4, &nbsp; Shantinagar Society, &nbsp; Near kirloskar bridge, &nbsp; Pune-Solapur Road, &nbsp; Hadapsar, &nbsp; Pune-411013.</h1>
+    <h1 className=' text-center font-semibold mt-1 mb-2 text-sm text-blue-600'>Mob. 9371288405 &nbsp;| &nbsp; E-Mail: Prepune04@gmail.com &nbsp; | &nbsp; Website: wwww.vikrantpresecurity.com</h1>
+  </div>
+  <h1 className=' mt-3 text-center font-semibold text-[#D9484A]'>Clients List</h1>
+
+  <MDBTable className='mt-4'>
+    <MDBTableHead>
+      <tr className='table-secondary text-center text-sm'>
+        <th scope='col' className='pb-3'>Sr. no</th>
+        <th scope='col' className='pb-3'>Name of Unit</th>
+        
+      </tr>
+    </MDBTableHead>
+    <MDBTableBody>
+              {duties.map((duty) => (
+                <tr key={duty.id} className='text-center text-sm'>
+                  <th scope='row' className='pb-3'>{duty.id}</th>
+                  <td className='pb-3'>{duty.name}</td>
+                </tr>
+              ))}
+            </MDBTableBody>
+  </MDBTable> 
+
+          </div>
+
+
+          {/* Page 5 */}
+          <div className="page">
+          <div className="header bg-slate-100 px-5 flex justify-between items-center rounded-md">
+          <img src={logo} alt="" width={125} />
+          <div className="title flex justify-center items-center flex-col">
+          <h1 className=' text-[30px] font-bold text-[#D9484A]'>P.R. Enterprise </h1>
+        <h1 className=' text-xl '> Security & Bouncer Services</h1>
+          </div>
+        </div>
+        <div className="border-t border-b border-[#ccc] mt-3 py-1">
+    <h1 className=' text-center text-sm'>Shop No. 4/4, &nbsp; Shantinagar Society, &nbsp; Near kirloskar bridge, &nbsp; Pune-Solapur Road, &nbsp; Hadapsar, &nbsp; Pune-411013.</h1>
+    <h1 className=' text-center font-semibold mt-1 mb-2 text-sm text-blue-600'>Mob. 9371288405 &nbsp;| &nbsp; E-Mail: Prepune04@gmail.com &nbsp; | &nbsp; Website: wwww.vikrantpresecurity.com</h1>
+  </div>
+
+  <h1 className=' mt-3 text-center font-semibold text-[#D9484A]'>Clients List</h1>
+
+  <MDBTable className='mt-4'>
+    <MDBTableHead>
+      <tr className='table-secondary text-center text-sm'>
+        <th scope='col' className='pb-3'>Sr. no</th>
+        <th scope='col' className='pb-3'>Name of Unit</th>
+        
+      </tr>
+    </MDBTableHead>
+    <MDBTableBody>
+              {duties1.map((duty1) => (
+                <tr key={duty1.id} className='text-center text-sm'>
+                  <th scope='row' className='pb-3'>{duty1.id}</th>
+                  <td className='pb-3'>{duty1.name}</td>
+                </tr>
+              ))}
+            </MDBTableBody>
+  </MDBTable> 
+
+          </div>
+
+
+          {/* Page 6 */}
+          <div className="page">
+          <div className="header bg-slate-100 px-5 flex justify-between items-center rounded-md">
+          <img src={logo} alt="" width={125} />
+          <div className="title flex justify-center items-center flex-col">
+          <h1 className=' text-[30px] font-bold text-[#D9484A]'>P.R. Enterprise </h1>
+        <h1 className=' text-xl '> Security & Bouncer Services</h1>
+          </div>
+        </div>
+        <div className="border-t border-b border-[#ccc] mt-3 py-1">
+    <h1 className=' text-center text-sm'>Shop No. 4/4, &nbsp; Shantinagar Society, &nbsp; Near kirloskar bridge, &nbsp; Pune-Solapur Road, &nbsp; Hadapsar, &nbsp; Pune-411013.</h1>
+    <h1 className=' text-center font-semibold mt-1 mb-2 text-sm text-blue-600'>Mob. 9371288405 &nbsp;| &nbsp; E-Mail: Prepune04@gmail.com &nbsp; | &nbsp; Website: wwww.vikrantpresecurity.com</h1>
+  </div>
+
+  <h1 className=' mt-3 text-center font-semibold text-[#D9484A]'>Clients List</h1>
+
+<MDBTable className='mt-4'>
+  <MDBTableHead>
+    <tr className='table-secondary text-center text-sm'>
+      <th scope='col' className='pb-3'>Sr. no</th>
+      <th scope='col' className='pb-3'>Name of Unit</th>
+      
+    </tr>
+  </MDBTableHead>
+  <MDBTableBody>
+            {duties2.map((duty2) => (
+              <tr key={duty2.id} className='text-center text-sm'>
+                <th scope='row' className='pb-3'>{duty2.id}</th>
+                <td className='pb-3'>{duty2.name}</td>
+              </tr>
+            ))}
+          </MDBTableBody>
+</MDBTable> 
+          </div>
+
+          {/* Page 7 */}
+          <div className="page">
+          <div className="header bg-slate-100 px-5 flex justify-between items-center rounded-md">
+          <img src={logo} alt="" width={125} />
+          <div className="title flex justify-center items-center flex-col">
+          <h1 className=' text-[30px] font-bold text-[#D9484A]'>P.R. Enterprise </h1>
+        <h1 className=' text-xl '> Security & Bouncer Services</h1>
+          </div>
+        </div>
+        <div className="border-t border-b border-[#ccc] mt-3 py-1">
+    <h1 className=' text-center text-sm'>Shop No. 4/4, &nbsp; Shantinagar Society, &nbsp; Near kirloskar bridge, &nbsp; Pune-Solapur Road, &nbsp; Hadapsar, &nbsp; Pune-411013.</h1>
+    <h1 className=' text-center font-semibold mt-1 mb-2 text-sm text-blue-600'>Mob. 9371288405 &nbsp;| &nbsp; E-Mail: Prepune04@gmail.com &nbsp; | &nbsp; Website: wwww.vikrantpresecurity.com</h1>
+  </div>
+
+  <h1 className=' mt-3 text-center font-semibold text-[#D9484A]'>Clients List</h1>
+
+<MDBTable className='mt-4'>
+  <MDBTableHead>
+    <tr className='table-secondary text-center text-sm'>
+      <th scope='col' className='pb-3'>Sr. no</th>
+      <th scope='col' className='pb-3'>Name of Unit</th>
+      
+    </tr>
+  </MDBTableHead>
+  <MDBTableBody>
+            {duties3.map((duty3) => (
+              <tr key={duty3.id} className='text-center text-sm'>
+                <th scope='row' className='pb-3'>{duty3.id}</th>
+                <td className='pb-3'>{duty3.name}</td>
+              </tr>
+            ))}
+          </MDBTableBody>
+</MDBTable> 
+<div className="sign1 flex justify-center items-center flex-col ml-[50%] mt-3">
+      <img src={sign} alt="" width={130}/>
+      <h1 className='mt-4 font-bold'>(Director)</h1>
+      <h1 className='mt-4 font-bold'>( Dubey.R.R )</h1>
+      <h1 className='mt-4 font-bold'>FOR. P.R ENTERPRICES SECURITY SERVICES</h1>
+      <h1 className='mt-4 font-bold'>Mob.:9371288405/9503343028</h1>
+      <h1 className='mt-4 font-bold'>Email: prepune04@gmail.com</h1>
+      
+    </div>
+          </div>
+
+
+          {/* Page 8 */}
+          <div className="page">
+          <div className="header bg-slate-100 px-5 flex justify-between items-center rounded-md">
+          <img src={logo} alt="" width={125} />
+          <div className="title flex justify-center items-center flex-col">
+          <h1 className=' text-[30px] font-bold text-[#D9484A]'>P.R. Enterprise </h1>
+        <h1 className=' text-xl '> Security & Bouncer Services</h1>
+          </div>
+        </div>
+        <div className="border-t border-b border-[#ccc] mt-3 py-1">
+    <h1 className=' text-center text-sm'>Shop No. 4/4, &nbsp; Shantinagar Society, &nbsp; Near kirloskar bridge, &nbsp; Pune-Solapur Road, &nbsp; Hadapsar, &nbsp; Pune-411013.</h1>
+    <h1 className=' text-center font-semibold mt-1 mb-2 text-sm text-blue-600'>Mob. 9371288405 &nbsp;| &nbsp; E-Mail: Prepune04@gmail.com &nbsp; | &nbsp; Website: wwww.vikrantpresecurity.com</h1>
+  </div>
+  <h1 className=' mt-3 text-left mx-8 font-semibold text-xl'>TRAINING PART</h1>
+
+  <h1 className=' font-bold mx-10 mt-4'>A) PHYSICAL TRAINIG:</h1>
+  <h1 className=' mx-12 mt-2'><span className=' text-black'>•</span> Uniform with Drill to face any Sort of physical obstacle and they fully disciplined.</h1>
+
+  <h1 className=' font-bold mx-10 mt-4'>B) PARED DICIPLINE: </h1>
+  <h1 className=' mx-12 mt-2 leading-7'><span className=' text-black'>•</span> They are trained in Lethi Charge if, necessary areas to control Violence of 
+Labors only after the permission of management only.</h1>
+
+  <h1 className=' mx-12 mt-2 leading-7'><span className=' text-black'>•</span> Our Security persons are trained in using All Sort of Arms and Ammunition only if the 
+situation is demands and it will be used only after the permission will be given strictly by 
+the management itself. </h1>
+
+<h1 className=' font-bold mx-10 mt-4'>C) FIRST AID:</h1>
+<h1 className=' mx-12 mt-2'><span className=' text-black'>•</span> Our Candidates are trained in First Aid Doctors.</h1>
+<h1 className=' mx-12 mt-2 leading-7'><span className=' text-black'>•</span> Our candidates are fully trained in Industrial Security/Industrial Intelligence, Bank 
+security and Personal Security. All the order of management will be executed with 100% 
+integrity, Loyalty and Result oriented to the entire satisfaction of the Management. </h1>
+
+<h1 className=' font-bold mx-10 mt-4'>D) TELEPHONE/ WIRELESS:</h1>
+<h1 className=' mx-12 mt-2 leading-7'><span className=' text-black'>•</span> Our candidates are capable of handling wireless equipment’s and passing and 
+receiving the message with Police Departments on situation demands. </h1>
+<h1 className=' mx-12 mt-2 leading-7'><span className=' text-black'>•</span> All Important Confidential Reports of industrial security, Industrial intelligence, Labor 
+Report will be given to the Management on day to day basis. </h1>
+<h1 className=' mx-12 mt-2 leading-7'><span className=' text-black'>•</span> Any instruction from Managements regarding Labor problems, the cases in handled 
+100% Guarantee to the entire satisfaction of the company by Active Security and Allied 
+Services. </h1>
+<h1 className=' font-bold mx-10 mt-4'>E) FIRE FIGHTING:</h1>
+<h1 className=' mx-12 mt-2'><span className=' text-black'>•</span> Our candidates are having knowledge of Fire Fighting System also. </h1>
+
+
+
+
+          </div>
+
+          {/* Page 9 */}
+          <div className="page">
+          <div className="header bg-slate-100 px-5 flex justify-between items-center rounded-md">
+          <img src={logo} alt="" width={125} />
+          <div className="title flex justify-center items-center flex-col">
+          <h1 className=' text-[30px] font-bold text-[#D9484A]'>P.R. Enterprise </h1>
+        <h1 className=' text-xl '> Security & Bouncer Services</h1>
+          </div>
+        </div>
+        <div className="border-t border-b border-[#ccc] mt-3 py-1">
+    <h1 className=' text-center text-sm'>Shop No. 4/4, &nbsp; Shantinagar Society, &nbsp; Near kirloskar bridge, &nbsp; Pune-Solapur Road, &nbsp; Hadapsar, &nbsp; Pune-411013.</h1>
+    <h1 className=' text-center font-semibold mt-1 mb-2 text-sm text-blue-600'>Mob. 9371288405 &nbsp;| &nbsp; E-Mail: Prepune04@gmail.com &nbsp; | &nbsp; Website: wwww.vikrantpresecurity.com</h1>
+  </div>
+  <h1 className=' font-bold mx-10 mt-4'>F) CONTRL SYSTEM:</h1>
+<h1 className=' mx-12 mt-2 leading-7'><span className=' text-black'>•</span> We recruit Experience hold Field Officers for checking of shift day today 
+basis and results some night rounder for checking of night shift.</h1>
+  <h1 className=' font-bold mx-10 mt-4'>J) COMPALINTS/SUGGESTIONS:</h1>
+<h1 className=' mx-12 mt-2 leading-7'><span className=' text-black'>•</span> Our area manager maintained complaints/suggestions book for your Management when 
+Area Manager visited once in a week, they surely meet to client any other authorized 
+person. If the management found the complaints about the security or management wants 
+to the suggestion for security, then authorized person write in our complaints/suggestion 
+book and Security Company take a action quickly .</h1>
+<h1 className=' mx-14 mt-4 leading-7'>We will consider it our honor to be associated formed to your early and positive 
+response in the  matter.</h1>
+
+<div className="sign1 flex justify-center items-center flex-col ml-[50%] mt-5">
+      <h1 className='mt-4 font-bold'>Thanking You,</h1>
+      <h1 className='mt-4 font-bold'>Yours Faithfully,</h1>
+      <img src={sign} alt="" width={130} className='mt-2'/>
+      <h1 className='mt-2 font-bold'>(Director)</h1>
+      <h1 className='mt-4 font-bold'>( Dubey.R.R )</h1>
+      <h1 className='mt-4 font-bold'>FOR. P.R ENTERPRICES SECURITY SERVICES</h1>
+      <h1 className='mt-4 font-bold'>Mob.:9371288405/9503343028</h1>
+      
+    </div>
+
+          </div>
+
+
+          {/* Page 10 */}
+          <div className="page">
+          <div className="header bg-slate-100 px-5 flex justify-between items-center rounded-md">
+          <img src={logo} alt="" width={125} />
+          <div className="title flex justify-center items-center flex-col">
+          <h1 className=' text-[30px] font-bold text-[#D9484A]'>P.R. Enterprise </h1>
+        <h1 className=' text-xl '> Security & Bouncer Services</h1>
+          </div>
+        </div>
+        <div className="border-t border-b border-[#ccc] mt-3 py-1">
+    <h1 className=' text-center text-sm'>Shop No. 4/4, &nbsp; Shantinagar Society, &nbsp; Near kirloskar bridge, &nbsp; Pune-Solapur Road, &nbsp; Hadapsar, &nbsp; Pune-411013.</h1>
+    <h1 className=' text-center font-semibold mt-1 mb-2 text-sm text-blue-600'>Mob. 9371288405 &nbsp;| &nbsp; E-Mail: Prepune04@gmail.com &nbsp; | &nbsp; Website: wwww.vikrantpresecurity.com</h1>
+  </div>
+  <img src={img} alt=""className=' mt-5' />
+          </div>
+
+
+          {/* Page 11 */}
+          <div className="page">
+          <div className="header bg-slate-100 px-5 flex justify-between items-center rounded-md">
+          <img src={logo} alt="" width={125} />
+          <div className="title flex justify-center items-center flex-col">
+          <h1 className=' text-[30px] font-bold text-[#D9484A]'>P.R. Enterprise </h1>
+        <h1 className=' text-xl '> Security & Bouncer Services</h1>
+          </div>
+        </div>
+        <div className="border-t border-b border-[#ccc] mt-3 py-1">
+    <h1 className=' text-center text-sm'>Shop No. 4/4, &nbsp; Shantinagar Society, &nbsp; Near kirloskar bridge, &nbsp; Pune-Solapur Road, &nbsp; Hadapsar, &nbsp; Pune-411013.</h1>
+    <h1 className=' text-center font-semibold mt-1 mb-2 text-sm text-blue-600'>Mob. 9371288405 &nbsp;| &nbsp; E-Mail: Prepune04@gmail.com &nbsp; | &nbsp; Website: wwww.vikrantpresecurity.com</h1>
+  </div>
+  <h1 className=' mt-3 text-left mx-8 font-semibold text-xl'>SOP</h1>
+  <h1 className=' mx-10 mt-2 leading-7'>1. We Provide the Security Services For 24hrs in 12 hrs Shift Day and night 
+from 8:00 Pm To 8:00 Am. </h1>
+<h1 className=' mx-10 mt-2 leading-7'>2. Relieving and handing taking over will be complete within 10 mints in 
+advance before starting the duty for both the shifts .  </h1>
+<h1 className=' mx-10 mt-2 leading-7'>3. Handing taking report will be given to conceal authority by watts up or 
+telephonic within 15 mints as starts the both the shift.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>4. The guard will be in well dressed with whistle, stick, and hanging ID on 
+chest.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>5. All gourds will be take care of covid19 as per guideline of government of 
+India and security Services.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>6. The main gate guard will be with thermal checking Machin for and sanitiser.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>7. Non of the member or any guest or visitors will be not allowed Frome main 
+gate without thermal checking.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>8. Voilation of any rules will be controlled and equally inform to concern 
+authority of body and owner of security </h1>
+<h1 className=' mx-10 mt-2 leading-7'>9. Checking of the security guard every day in both shifts will be the carriedout 
+by the security supervisor and field officer/weekly night check by the night 
+rounder after 2:30pm to 5:00am.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>10. Operation manager will be meet to the concern authority once a week.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>11. MD will visit two in a month. on any emergency or any special call by body.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>12. Equipment’s available with the guard while carrying out duty – long baton / 
+torch.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>13. Communication system available between guards Mobile / Rounder guard. 
+(Company Mobile).</h1>
+<h1 className=' mx-10 mt-2 leading-7'>14. Do’s and Don’t format will be provide by us.</h1>
+
+
+          </div>
+
+          {/* Page 12 */}
+          <div className="page">
+          <div className="header bg-slate-100 px-5 flex justify-between items-center rounded-md">
+          <img src={logo} alt="" width={125} />
+          <div className="title flex justify-center items-center flex-col">
+          <h1 className=' text-[30px] font-bold text-[#D9484A]'>P.R. Enterprise </h1>
+        <h1 className=' text-xl '> Security & Bouncer Services</h1>
+          </div>
+        </div>
+        <div className="border-t border-b border-[#ccc] mt-3 py-1">
+    <h1 className=' text-center text-sm'>Shop No. 4/4, &nbsp; Shantinagar Society, &nbsp; Near kirloskar bridge, &nbsp; Pune-Solapur Road, &nbsp; Hadapsar, &nbsp; Pune-411013.</h1>
+    <h1 className=' text-center font-semibold mt-1 mb-2 text-sm text-blue-600'>Mob. 9371288405 &nbsp;| &nbsp; E-Mail: Prepune04@gmail.com &nbsp; | &nbsp; Website: wwww.vikrantpresecurity.com</h1>
+  </div>
+  <h1 className=' mx-10 mt-2 leading-7'>15. Proper dress code/ uniform to the personnel on duty- we provide a set of 
+uniform to guard.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>16. Daily briefing by supervisor day and night shift and monthly training by the 
+fire fitting office our mgr/trg.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>17. Daily Attendance register of a security Guards. House Keeping Entry, Entry 
+of maids, Maintenance staff. Sued be Montane by the security supervisor and 
+sing the by the concern authority.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>18. Complain or satisfactory report of security services in written remark will be 
+taken weekly from security head/secretary/chairman by security supervisor  
+and submitted to the office by field officer without fail on every Monday.</h1>
+<h1 className=' mx-10 mt-2 leading-7 font-bold'>19. We do our best, in view of safety of society / company.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>20. Verification of guard is done by our staff. Police verification if required by 
+client.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>21. Unauthorized entries, pilferages – Visitor, vendor, all screens at the entry 
+point of company. Joint investigation in case of theft.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>22. Either party may terminate this contract by serving advance written notice of 
+one month.</h1>
+<h1 className=' mx-10 mt-2 leading-7'>23. We will raise your bill monthly and submit the same at your office before <span className=' font-bold'>2nd 
+date of the next month. Payment should be release in first week of the 
+month.</span></h1>
+<h1 className=' mx-10 mt-2 leading-7'>24. If a service is found unsatisfactory or unacceptable, your service will be 
+terminated without   assigning  any  reason.</h1>
+<div className="footer mt-2 flex justify-between items-center p-5">
+            <div className="left">
+            <h1 className='font-bold'>Thanking You,</h1>
+      <h1 className='mt-4 font-bold'>Yours Faithfully,</h1>
+      <img src={sign} alt="" width={130} className='mt-2'/>
+            </div>
+            <div className="right">
+            <h1 className=' font-bold'>FOR. P.R ENTERPRICES SECURITY SERVICES</h1>
+      <h1 className='mt-4 font-bold'>Mob.:9371288405/9503343028</h1>
+      <h1 className='mt-4 font-bold'>Email: <a className='' href="mailto:prepune04@gmail.com">prepune04@gmail.com</a></h1>
+            </div>
+</div>
+
+          </div>
           
         </>
       );
@@ -349,7 +765,7 @@ const PreQuotationForm = () => {
                   <label htmlFor="to" className="form-label">To</label>
                   <input type="text" className="form-control" id="to" name="to" required />
                 </div>
-                <p className=' font-medium text-xl mt-5 pt-5 border-t border-[#ccc]'>Duties for 12 Hrs non compliance </p>
+                <p className=' font-medium text-xl mt-5 pt-5 border-t border-[#b4b4b4]'>Duties for 12 Hrs non compliance </p>
                 <p className=' mt-4 text-lg'>Security Guard </p>
                 <div className="col-md-6 bor">
                   <label htmlFor="ngprice" className="form-label">Price</label>
@@ -369,7 +785,7 @@ const PreQuotationForm = () => {
                   <input type="text" className="form-control" id="nsremark" name="nsremark" required />
                 </div>
 
-                <p className=' font-medium text-xl mt-5 pt-5 border-t border-[#ccc]'>Duties for 12 Hrs (Combine) compliance</p>
+                <p className=' font-medium text-xl mt-5 pt-5 border-t border-[#b4b4b4]'>Duties for 12 Hrs (Combine) compliance</p>
                 <p className=' mt-4 text-lg'>Security Guard </p>
                 <div className="col-md-6">
                   <label htmlFor="cgprice" className="form-label">Price</label>
@@ -389,7 +805,7 @@ const PreQuotationForm = () => {
                   <input type="text" className="form-control" id="csremark" name="csremark" required />
                 </div>
 
-                <p className=' font-medium text-xl mt-5 pt-5 border-t border-[#ccc]'>Duties for 12 Hrs with compliance </p>
+                <p className=' font-medium text-xl mt-5 pt-5 border-t border-[#b4b4b4]'>Duties for 12 Hrs with compliance </p>
                 <p className=' mt-4 text-lg'>Security Guard </p>
                 <div className="col-md-6">
                   <label htmlFor="wgprice" className="form-label">Price</label>
