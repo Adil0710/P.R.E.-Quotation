@@ -217,7 +217,7 @@ const PreQuotationForm = () => {
       <img src={sign} alt="" width={130}/>
       <h1 className='mt-4 font-bold'>(Director)</h1>
       <h1 className='mt-4 font-bold'>( Dubey.R.R )</h1>
-      <h1 className='mt-4 font-bold'>FOR. P.R ENTERPRICES SECURITY SERVICES</h1>
+      <h1 className='mt-4 font-bold'>FOR. P.R ENTERPRISES SECURITY SERVICES</h1>
     </div>
   </div>
 
@@ -480,7 +480,7 @@ const PreQuotationForm = () => {
       <img src={sign} alt="" width={130}/>
       <h1 className='mt-4 font-bold'>(Director)</h1>
       <h1 className='mt-4 font-bold'>( Dubey.R.R )</h1>
-      <h1 className='mt-4 font-bold'>FOR. P.R ENTERPRICES SECURITY SERVICES</h1>
+      <h1 className='mt-4 font-bold'>FOR. P.R ENTERPRISES SECURITY SERVICES</h1>
       <h1 className='mt-4 font-bold'>Mob.:9371288405/9503343028</h1>
       <h1 className='mt-4 font-bold'>Email: prepune04@gmail.com</h1>
       
@@ -567,7 +567,7 @@ response in the  matter.</h1>
       <img src={sign} alt="" width={130} className='mt-2'/>
       <h1 className='mt-2 font-bold'>(Director)</h1>
       <h1 className='mt-4 font-bold'>( Dubey.R.R )</h1>
-      <h1 className='mt-4 font-bold'>FOR. P.R ENTERPRICES SECURITY SERVICES</h1>
+      <h1 className='mt-4 font-bold'>FOR. P.R ENTERPRISES SECURITY SERVICES</h1>
       <h1 className='mt-4 font-bold'>Mob.:9371288405/9503343028</h1>
       
     </div>
@@ -677,7 +677,7 @@ terminated without   assigning  any  reason.</h1>
       <img src={sign} alt="" width={130} className='mt-2'/>
             </div>
             <div className="right">
-            <h1 className=' font-bold'>FOR. P.R ENTERPRICES SECURITY SERVICES</h1>
+            <h1 className=' font-bold'>FOR. P.R ENTERPRISES SECURITY SERVICES</h1>
       <h1 className='mt-4 font-bold'>Mob.:9371288405/9503343028</h1>
       <h1 className='mt-4 font-bold'>Email: <a className='' href="mailto:prepune04@gmail.com">prepune04@gmail.com</a></h1>
             </div>
