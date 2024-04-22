@@ -735,7 +735,7 @@ terminated without   assigning  any  reason.</h1>
                 <label htmlFor="password" className="form-label font-medium">Password</label>
                 <input type="password" className="form-control bg-transparent border-[#999999]" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
               </div>
-              <button type="submit" className="btn btn-primary w-40 mt-3">Login</button>
+              <button type="submit" className="btn btn-primary w-40 mt-3 btn-sm">Login</button>
             </form>
           </div>
         </div>
